@@ -13,4 +13,4 @@ describe('Модуль Регистрация',() => {
         cy.get('input[autocomplete="additional-name"]').should('exist')
             .and('have.attr', 'required', false).type('Романовна');
     });
-});
+})
