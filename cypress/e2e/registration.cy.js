@@ -12,7 +12,6 @@ describe('Модуль Регистрация',() => {
         cy.get('input[autocomplete="given-name"]').type('Елизавета');
         cy.get('input[autocomplete="additional-name"]').should('exist').and('not.have.attr', 'required');
         cy.get('input[autocomplete="additional-name"]').type('Романовна');
-        // cy.get('input[type="file"]').should('exist').and('not.have.attr', 'required');
         cy.get('input[type="file"]').selectFile('tis_testcase/cypress/fixtures/avatar.jpg', { force: true });
         cy.get('div.registration-form__button').contains('Создать аккаунт').should('be.visible')
             .and('not.have.css', 'display', 'none').click();
