@@ -9,12 +9,12 @@ describe('Модуль Заявки', () => {
         cy.get('button[type=submit]').eq(3).click()
         cy.get('div.desktop-modal').should('be.visible');
 
-        cy.contains('.menu-item.select-role-form__item-choice', 'Я являюсь представителем коммерческой организации').should('be.visible')
-            .click()
+        cy.contains('.menu-item.select-role-form__item-choice', 'Я являюсь представителем коммерческой организации')
+            .should('be.visible').click()
         cy.get('div.desktop-modal').should('be.visible');
 
-        cy.contains('.menu-item.variants-company__item-choice', 'Создание нового личного кабинета работодателя').should('be.visible')
-            .click()
+        cy.contains('.menu-item.variants-company__item-choice', 'Создание нового личного кабинета работодателя')
+            .should('be.visible').click()
         cy.get('div.desktop-modal').should('be.visible');
 
         cy.get('input[placeholder="Название вашей организации"]').type('МяуМяуХаус');
@@ -22,7 +22,6 @@ describe('Модуль Заявки', () => {
         cy.get('textarea[placeholder="Описание вашей организации"]').type('МяуМяуМяуМяуМяуМяуМяуМяуМяуМяу');
         cy.get('div.create-company-form__description-block').contains('Добавить').should('be.visible')
             .and('not.have.css', 'display', 'none').click();
-
     })
 
     it('Некорректный ввод данных(недопустимые символы) (негативный) роль КО', () => {
@@ -35,12 +34,12 @@ describe('Модуль Заявки', () => {
         cy.get('button[type=submit]').eq(3).click()
         cy.get('div.desktop-modal').should('be.visible');
 
-        cy.contains('.menu-item.select-role-form__item-choice', 'Я являюсь представителем коммерческой организации').should('be.visible')
-            .click()
+        cy.contains('.menu-item.select-role-form__item-choice', 'Я являюсь представителем коммерческой организации')
+            .should('be.visible').click()
         cy.get('div.desktop-modal').should('be.visible');
 
-        cy.contains('.menu-item.variants-company__item-choice', 'Создание нового личного кабинета работодателя').should('be.visible')
-            .click()
+        cy.contains('.menu-item.variants-company__item-choice', 'Создание нового личного кабинета работодателя')
+            .should('be.visible').click()
         cy.get('div.desktop-modal').should('be.visible');
 
         cy.get('input[placeholder="Название вашей организации"]').type('МяуМяуХаус=%#№');
@@ -72,7 +71,6 @@ describe('Модуль Заявки', () => {
         cy.get('textarea[placeholder="Описание вашей организации"]').type('МяуМяуМяуМяуМяуМяуМяуМяуМяуМяу');
         cy.get('div.create-company-form__description-block').contains('Добавить').should('be.visible')
             .and('not.have.css', 'display', 'none').click();
-
     })
 
     it('Некорректный ввод данных(недопустимые символы) (негативный) роль ОУ', () => {
@@ -85,8 +83,8 @@ describe('Модуль Заявки', () => {
         cy.get('button[type=submit]').eq(3).click()
         cy.get('div.desktop-modal').should('be.visible');
 
-        cy.contains('.menu-item.select-role-form__item-choice', 'Я являюсь представителем образовательной организации').should('be.visible')
-            .click()
+        cy.contains('.menu-item.select-role-form__item-choice', 'Я являюсь представителем образовательной организации')
+            .should('be.visible').click()
         cy.get('div.desktop-modal').should('be.visible');
 
         cy.contains('.menu-item.variants-company__item-choice', 'Создание нового личного кабинета ОУ').should('be.visible')

@@ -16,7 +16,6 @@ describe('Модуль Регистрация',() => {
         cy.get('div.registration-form__button').contains('Создать аккаунт').should('be.visible')
             .and('not.have.css', 'display', 'none').click();
         cy.visit('https://dev.profteam.su/account/main');
-
     });
     it('Некорректная почта (негативный) Модуль регистрация', () => {
         cy.visit('https://dev.profteam.su/registration')
