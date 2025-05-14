@@ -43,7 +43,8 @@ describe('Модуль Регистрация',() => {
         cy.get('input[type="email"]').type('email2025@mail.ru');
         cy.get('input[type="password"]').first().type('Password1');
         cy.get('input[type="password"]').eq(1).type('dge53');
-        cy.get('div.registration-form__button').contains('Далее').click({force: true});
+        cy.get('div.registration-form__button').contains('Далее').should('be.visible')
+            .and('not.have.css', 'display', 'none').click();
     });
 
     it('Слишком простой пароль (негативный) Модуль регистрация', () => {
@@ -71,5 +72,6 @@ describe('Модуль Регистрация',() => {
         cy.get('input[autocomplete="additional-name"]').type('Romanovna');
         cy.get('input[type="file"]').should('exist').and('not.have.attr', 'required');
         cy.get('input[type="file"]').selectFile('cypress/fixtures/avatar.jpg', { force: true });
+        cy.get('div.registration-form__button').contains('Создать аккаунт').click({force: true});
     });
 })
